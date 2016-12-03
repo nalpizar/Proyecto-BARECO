@@ -1,15 +1,14 @@
 <div class="col-md-3 task-type">
-    <h4>Seleccione un tipo de Ficha</h4>
-    <form class="well" (submit)="addTask($event)">
+    <h4>Seleccione un tipo de Ficha</h4>    
+    <form class="well">
       <div class="form-group">
-        <input (click)="onClick($event)" value="testdecajas" id="test" type="text" [(ngModel)]="title" name="title" class="form-control" placeholder="Agregue una ficha...">    
+        <button (click)="onClick($event)" value="testdecajas" id="test" type="button" name="title" class="btn btn-primary">Cajas</button>  
+        <button (click)="onClick($event)" value="Plataforma de Servicio" id="test" type="button" name="title" class="btn btn-primary">Plataforma de Servicio</button>
+        <button (click)="onClick($event)" value="Crédito" id="test" name="title" class="btn btn-success" type="button">Crédito</button>
+        <button (click)="onClick($event)" value="Pago de Marchamo" id="test" name="title" class="btn btn-info" type="button">Pago de Marchamo</button>
+        <button (click)="onClick($event)" value="Personas con Discapacidad" id="test" name="title" class="btn btn-warning" type="button">Personas con Discapacidad</button>
       </div>  
     </form>
-    
-    <button type="button" class="btn btn-primary">Plataforma de Servicio</button>
-    <button type="button" class="btn btn-success">Crédito</button>
-    <button type="button" class="btn btn-info">Pago de Marchamo</button>
-    <button type="button" class="btn btn-warning">Personas con Discapacidad</button>
 </div>
 
 <!-- Modal -->
