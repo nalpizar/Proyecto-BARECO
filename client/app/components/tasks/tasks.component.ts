@@ -32,6 +32,23 @@ export class TasksComponent {
                 this.title = '';
             });
     }
+
+    onClick(event) {
+        console.log(event);
+        console.log(event.srcElement.attributes.value);
+        var valueAttr = event.srcElement.attributes.value;
+        var value = valueAttr.nodeValue;
+        console.log(value);
+        var newTask = {
+            title: value,
+            isDone: false
+        }
+        this.taskService.addTask(newTask)
+            .subscribe(task => {
+                this.tasks.push(task);
+                this.title = '';
+            });
+    }
     
     deleteTask(id){
         var tasks = this.tasks;

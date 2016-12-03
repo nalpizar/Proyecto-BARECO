@@ -32,6 +32,23 @@ var TasksComponent = (function () {
             _this.title = '';
         });
     };
+    TasksComponent.prototype.onClick = function (event) {
+        var _this = this;
+        console.log(event);
+        console.log(event.srcElement.attributes.value);
+        var valueAttr = event.srcElement.attributes.value;
+        var value = valueAttr.nodeValue;
+        console.log(value);
+        var newTask = {
+            title: value,
+            isDone: false
+        };
+        this.taskService.addTask(newTask)
+            .subscribe(function (task) {
+            _this.tasks.push(task);
+            _this.title = '';
+        });
+    };
     TasksComponent.prototype.deleteTask = function (id) {
         var tasks = this.tasks;
         this.taskService.deleteTask(id).subscribe(function (data) {

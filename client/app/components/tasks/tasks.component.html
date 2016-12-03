@@ -2,14 +2,34 @@
     <h4>Seleccione un tipo de Ficha</h4>
     <form class="well" (submit)="addTask($event)">
       <div class="form-group">
-        <input type="text" [(ngModel)]="title" name="title" class="form-control" placeholder="Agregue una ficha...">    
+        <input (click)="onClick($event)" value="testdecajas" id="test" type="text" [(ngModel)]="title" name="title" class="form-control" placeholder="Agregue una ficha...">    
       </div>  
     </form>
-    <button type="button" class="btn btn-danger">Cajas</button>
+    
     <button type="button" class="btn btn-primary">Plataforma de Servicio</button>
     <button type="button" class="btn btn-success">Crédito</button>
     <button type="button" class="btn btn-info">Pago de Marchamo</button>
     <button type="button" class="btn btn-warning">Personas con Discapacidad</button>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">Cajas</h4>
+      </div>
+      <div class="modal-body">
+        <p>C11</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div class="task-list col-md-6">
