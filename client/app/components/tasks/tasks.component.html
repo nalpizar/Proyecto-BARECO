@@ -1,10 +1,19 @@
-<form class="well" (submit)="addTask($event)">
+<div class="col-md-3 task-type">
+    <h4>Seleccione un tipo de Ficha</h4>
+    <form class="well" (submit)="addTask($event)">
       <div class="form-group">
-        <input type="text" [(ngModel)]="title" name="title" class="form-control" placeholder="Add Task...">    
+        <input type="text" [(ngModel)]="title" name="title" class="form-control" placeholder="Agregue una ficha...">    
       </div>  
-</form>
+    </form>
+    <button type="button" class="btn btn-danger">Cajas</button>
+    <button type="button" class="btn btn-primary">Plataforma de Servicio</button>
+    <button type="button" class="btn btn-success">Crédito</button>
+    <button type="button" class="btn btn-info">Pago de Marchamo</button>
+    <button type="button" class="btn btn-warning">Personas con Discapacidad</button>
+</div>
 
-<div class="task-list">
+<div class="task-list col-md-6">
+    <h4>Lista de Fichas</h4>
     <div *ngFor="let task of tasks">
         <div class="col-md-1">
             <input type="checkbox" [checked]="task.isDone" (click)="updateStatus(task)">
@@ -13,7 +22,7 @@
             {{task.title}}    
         </div> 
         <div class="col-md-4">
-            <input type="button" (click)="deleteTask(task._id)" value="Delete" class="btn btn-danger">    
+            <input type="button" (click)="deleteTask(task._id)" value="Borrar" class="btn btn-danger">    
         </div>
         <br><br>
     </div>
