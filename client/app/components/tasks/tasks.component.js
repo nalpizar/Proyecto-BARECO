@@ -14,11 +14,15 @@ var TasksComponent = (function () {
     function TasksComponent(taskService) {
         var _this = this;
         this.taskService = taskService;
+        this.obj = [{ name: 'C' }];
         this.taskService.getTasks()
             .subscribe(function (tasks) {
             _this.tasks = tasks;
         });
     }
+    TasksComponent.prototype.increment = function (item) {
+        item.count++;
+    };
     TasksComponent.prototype.addTask = function (event) {
         var _this = this;
         event.preventDefault();
