@@ -18,6 +18,13 @@ export class TasksComponent {
                 this.tasks = tasks;
             });
     }
+
+    name:string;
+    obj = [{name: 'Hello 1'}];
+
+    increment(item) {
+        item.count++;
+    }
     
     addTask(event){
         event.preventDefault();
