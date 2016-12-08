@@ -32,10 +32,8 @@
       </div> 
     </form>
 </div>
-
-
-
-<div class="task-list col-md-6">
+<div class="task-list col-md-5">
+  <div class="row">
     <h4>Lista de Fichas</h4>
     <div *ngFor="let task of tasks">
         <div class="col-md-1">
@@ -49,22 +47,16 @@
         </div>
         <br><br>
     </div>
+   </div> 
 </div>
 
-<div class="col-md-12 counter">
-  <input type="button" value="start" id="start" class="btn btn-success"/>
-  <input type="button" value="pause" id="pause" class="btn btn-warning" />
-  <input type="button" value="stop" id="stop" class="btn btn-danger"/>
-  <input type="button" value="step" id="step" class="btn btn-info"/>
+<div class="col-md-2 counter">
+  <h4>Fichas en Espera</h4>
+  <input type="button" value="Iniciar" id="start" class="btn btn-success"/>
+</div>
 
-  <p>
-    <strong>startTime:</strong> <span id="startTime"></span>
-  </p>
-  <p>
-    <strong>relative:</strong> <span id="relative"></span>
-  </p>
-  <p>
-    <strong>stopTime:</strong> <span id="stopTime"></span>
-  </p>
-  <ul id="steps"></ul>
+<div class="col-md-2">
+  <h4>Fichas en Proceso</h4>
+  <input type="button" value="Detener" id="stop" class="btn btn-danger"/>
+  <strong>Duración:</strong> <span id="relative"></span>
 </div>
