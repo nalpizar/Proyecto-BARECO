@@ -39,7 +39,7 @@ export class TasksComponent {
                 this.title = '';
             });
     }
-
+   
     onClick(event) {
         console.log(event);
         console.log(event.srcElement.attributes.value);
