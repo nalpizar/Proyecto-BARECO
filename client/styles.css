@@ -1,5 +1,6 @@
 body {
     background-color: #ecf0f1;
+    color: #2c3e50;
 }
 
 li {
@@ -33,6 +34,10 @@ h4.navbar-brand {
     color: #ecf0f1;
 }
 
+.nav-pills > li.active > a {
+    color: #95a5a6;
+}
+
 .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {   
     background: none;
     font-size: 14px;
@@ -41,6 +46,10 @@ h4.navbar-brand {
 
 .nav-pills > li > a:hover {
     color: #95a5a6;
+}
+
+h3 {
+    padding-bottom: 20px;
 }
 
 .task-type button {
