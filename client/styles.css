@@ -1,3 +1,48 @@
+body {
+    background-color: #ecf0f1;
+}
+
+li {
+    list-style-type: none; 
+}
+
+.main-nav {
+    padding: 20px 0;
+    background-color: #c0392b;
+}
+
+h4.navbar-brand {
+    padding: 0;
+    font: 40px georgia, serif;
+    color: #ecf0f1;
+}
+
+.nav > li > a:hover, .nav > li > a:focus {
+    background: none;
+}
+
+.nav-pills {
+    padding-top: 15px;
+}
+
+.nav-pills li.active {
+    
+}
+
+.nav-pills > li > a {
+    color: #ecf0f1;
+}
+
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {   
+    background: none;
+    font-size: 14px;
+}
+
+
+.nav-pills > li > a:hover {
+    color: #95a5a6;
+}
+
 .task-type button {
 	width: 100%;
 	margin-bottom: 10px;
