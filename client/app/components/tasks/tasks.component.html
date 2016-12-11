@@ -52,29 +52,41 @@
     <!-- VISTA CAJAS -->
     <div class="tab-pane" id="cajas">
       <div class="row">
-        <div class="col-md-6 text-center">
-          <h3>Fichas en Proceso</h3>
-          <div *ngFor="let task of tasks">
-            <!-- <div *ngIf="task.isDone === true"> -->
-                {{task.title}} 
-                <input type="button" value="Iniciar" id="start" class="btn btn-success"/>
-                <strong>Hora de Inicio:</strong> <span id="startTime"></span>
-                <!-- <input type="button" (click)="deleteTask(task._id)" value="Borrar" class="btn btn-danger">     -->
-            <!-- </div> --> 
-            <br><br>
-          </div>  
+        <div class="col-md-6 left">
+          <h3 class="text-center">Fichas en Proceso</h3>
+          <table class="table">
+            <tr>
+              <th>Ficha</th>
+              <th>Iniciado</th>
+              <th>Hora de Inicio</th>
+            </tr>
+            <tr *ngFor="let task of tasks" class="text-center">
+              <!-- <div *ngIf="task.isDone === true"> -->
+                  <td>{{task.title}}</td> 
+                  <td><input type="button" value="Iniciar" id="start" class="btn btn-success"/></td>
+                  <td><span id="startTime"></span></td>
+                  <!-- <input type="button" (click)="deleteTask(task._id)" value="Borrar" class="btn btn-danger">     -->
+              <!-- </div> --> 
+            </tr>
+          </table>  
         </div>
-        <div class="col-xs-6 text-center">
-          <h3>Fichas Terminadas</h3>
-          <div *ngFor="let task of tasks">
-            <div *ngIf="task.isDone === false">
-                {{task.title}} 
-                <input type="checkbox" [checked]="task.isDone" (click)="updateStatus(task)" id="stop">
-                <strong>Duración:</strong> <span id="relative"></span>
-                <!-- <input type="button" (click)="deleteTask(task._id)" value="Borrar" class="btn btn-danger">     -->
-            </div>
-            <br><br>
-          </div> 
+        <div class="col-xs-6">
+          <h3 class="text-center">Fichas Terminadas</h3>
+          <table class="table">
+            <tr>
+              <th>Ficha</th>
+              <th>Finalizado</th>
+              <th>Duración</th>
+            </tr>
+            <tr *ngFor="let task of tasks" class="text-center">
+              <!-- <div *ngIf="task.isDone === false"> -->
+                  <td>{{task.title}}</td>
+                  <td><input type="checkbox" [checked]="task.isDone" (click)="updateStatus(task)" id="stop">
+                  <td><span id="relative"></span></td>
+                  <!-- <input type="button" (click)="deleteTask(task._id)" value="Borrar" class="btn btn-danger">     -->
+              <!-- </div> -->
+            </tr> 
+          </table>
         </div>
       </div>
     </div>

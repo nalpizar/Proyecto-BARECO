@@ -92,4 +92,12 @@ h4 {
     float: left;
 }
 
+th {
+    text-align: center;
+}
+
+.left {
+    border-right: 1px solid #2c3e50; 
+}
+
 
