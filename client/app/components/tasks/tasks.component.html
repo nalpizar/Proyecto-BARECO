@@ -1,43 +1,66 @@
 <div class="tab-content clearfix">
     <!-- VISTA CLIENTES -->
     <div class="tab-pane active" id="elegir">
-         <div class="row">
-             <div class="col-md-6 task-type">
-                 <h3 class="text-center">Seleccione un tipo de Ficha</h3>
-                 <form class="well">
-                     <div class="form-group">
-                         <div class="item" *ngFor="let item of obj">
-                            <button (click)="increment(item)" (click)="onClick($event)" value="{{'C'}} {{ item['count'] ? item['count'] : item['count'] = 0}}" id="test" type="button" name="title" class="btn btn-primary btn-serv " data-toggle="modal" data-target="#myModal">Cajas</button>
-                            <!-- Modal -->
-                            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                              <span aria-hidden="true">&times;</span>
-                                            </button>
-                                            <h4 class="modal-title" id="myModalLabel">Cajas</h4>
-                                        </div>
-                                        <div class="modal-body" >
-                                            <div class="modal-body" >
-                                                <span>Su ficha es:</span>      
-                                                <span>C {{item.count - 1}}</span>
-                                            </div>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                                        </div>
-                                    </div>
-                                </div>
+      <div class="row">
+        <div class="col-md-6 task-type">
+            <h3 class="text-center">Seleccione un tipo de Ficha</h3>
+            <form class="well">
+              <div class="form-group">
+                <div class="item" *ngFor="let item of obj">
+                  <button (click)="increment(item)" (click)="onClick($event)" value="{{'C'}} {{ item['count'] ? item['count'] : item['count'] = 0}}" id="cajas" type="button" name="title" class="btn btn-primary btn-serv " data-toggle="modal" data-target="#cajasModal">Cajas</button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="cajasModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                            <h4 class="modal-title" id="myModalLabel">Cajas</h4>
+                          </div>
+                          <div class="modal-body" >
+                            <div class="modal-body" >
+                                <span>Su ficha es:</span>      
+                                <span>C {{item.count - 1}}</span>
                             </div>
-                         </div>
-                         <button (click)="onClick($event)" value="Plataforma de Servicio" id="test" type="button" name="title" class="btn btn-danger btn-serv">Plataforma de Servicio</button>
-                         <button (click)="onClick($event)" value="Crédito" id="test" name="title" class="btn btn-success btn-serv" type="button">Crédito</button>
-                         <button (click)="onClick($event)" value="Pago de Marchamo" id="test" name="title" class="btn btn-info btn-serv" type="button">Pago de Marchamo</button>
-                         <button (click)="onClick($event)" value="Personas con Discapacidad" id="test" name="title" class="btn btn-warning btn-serv" type="button">Personas con Discapacidad</button>
-                     </div>
-                 </form>
-             </div>
+                          </div>
+                          <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  
+                    <button (click)="increment(item)" (click)="onClick($event)" value="{{'P'}} {{ item['count'] ? item['count'] : item['count'] = 0}}" id="plataforma" class="btn btn-danger btn-serv" data-toggle="modal" data-target="#plataformaModal">Plataforma de Servicio</button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="plataformaModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                            <h4 class="modal-title" id="myModalLabel">Plataforma de Servicio</h4>
+                          </div>
+                          <div class="modal-body" >
+                            <div class="modal-body" >
+                                <span>Su ficha es:</span>      
+                                <span>P {{item.count - 1}}</span>
+                            </div>
+                          </div>
+                          <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                   <button (click)="onClick($event)" value="Crédito" id="test" name="title" class="btn btn-success btn-serv" type="button">Crédito</button>
+                   <button (click)="onClick($event)" value="Pago de Marchamo" id="test" name="title" class="btn btn-info btn-serv" type="button">Pago de Marchamo</button>
+                   <button (click)="onClick($event)" value="Personas con Discapacidad" id="test" name="title" class="btn btn-warning btn-serv" type="button">Personas con Discapacidad</button>
+              </div>
+            </form>
+        </div>
              <div class="col-md-6 task-type">
                 <div class="task-list text-center">
                     <h3>Fichas en Espera</h3>
@@ -46,11 +69,11 @@
                     </div>
                 </div>
              </div>
-         </div>
+      </div>
     </div>
     
     <!-- VISTA CAJAS -->
-    <div class="tab-pane" id="cajas">
+    <div class="tab-pane" id="cajasTab">
       <div class="row">
         <div class="col-md-6 left">
           <h3 class="text-center">Fichas en Proceso</h3>
@@ -92,16 +115,16 @@
     </div>
 
     <!-- VISTA PLATAFORMA SERVICIOS -->
-    <div class="tab-pane" id="servicios"></div>
+    <div class="tab-pane" id="serviciosTab"></div>
 
     <!-- VISTA CREDITO -->
-    <div class="tab-pane" id="creditos"></div>
+    <div class="tab-pane" id="creditosTab"></div>
 
     <!-- VISTA MARCHAMO -->
-    <div class="tab-pane" id="marchamo"></div>
+    <div class="tab-pane" id="marchamoTab"></div>
 
     <!-- VISTA DISCAPACIDAD -->
-    <div class="tab-pane" id="discapacidad"></div>
+    <div class="tab-pane" id="discapacidadTab"></div>
 </div>
 
 <input type="button" value="Iniciar" class="btn btn-success" id="start">
