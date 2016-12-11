@@ -63,7 +63,7 @@
             <tr *ngFor="let task of tasks" class="text-center">
               <!-- <div *ngIf="task.isDone === true"> -->
                   <td>{{task.title}}</td> 
-                  <td><input type="button" value="Iniciar" id="start" class="btn btn-success"/></td>
+                  <td><input type="button" value="Iniciar" class="btn btn-success" id="start"></td>
                   <td><span id="startTime"></span></td>
                   <!-- <input type="button" (click)="deleteTask(task._id)" value="Borrar" class="btn btn-danger">     -->
               <!-- </div> --> 
@@ -81,7 +81,7 @@
             <tr *ngFor="let task of tasks" class="text-center">
               <!-- <div *ngIf="task.isDone === false"> -->
                   <td>{{task.title}}</td>
-                  <td><input type="checkbox" [checked]="task.isDone" (click)="updateStatus(task)" id="stop">
+                  <td><input type="button" value="Detener" class="btn btn-success" id="stop"><input type="checkbox" [checked]="task.isDone" (click)="updateStatus(task)"></td>
                   <td><span id="relative"></span></td>
                   <!-- <input type="button" (click)="deleteTask(task._id)" value="Borrar" class="btn btn-danger">     -->
               <!-- </div> -->
@@ -104,8 +104,11 @@
     <div class="tab-pane" id="discapacidad"></div>
 </div>
 
-
-
+<input type="button" value="Iniciar" class="btn btn-success" id="start">
+<p>Inicio: <span id="startTime"></span></p>
+<br>
+<input type="checkbox" value="Detener" class="btn btn-success" id="stop">
+<p>Tiempo Total:<span id="relative"></span></p>
 
 
 

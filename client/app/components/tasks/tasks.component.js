@@ -88,7 +88,26 @@ var TasksComponent = (function () {
 exports.TasksComponent = TasksComponent;
 //# sourceMappingURL=tasks.component.js.map
 
+
+
 // Chronometer
+var timer = new Timer();
+$('.startButton').click(function () {
+    timer.start();
+});
+$('.stopButton').click(function () {
+    timer.stop();
+});
+timer.addEventListener('secondsUpdated', function (e) {
+    $('.values').html(timer.getTimeValues().toString());
+});
+timer.addEventListener('started', function (e) {
+    $('.values').html(timer.getTimeValues().toString());
+});
+
+
+//Chronometer
+
 $(function(){
   var $startTime = $('#startTime');
   var $relative = $('#relative');
