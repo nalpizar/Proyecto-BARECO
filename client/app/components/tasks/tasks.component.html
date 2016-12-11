@@ -32,7 +32,7 @@
                             </div>
                          </div>
                          <button (click)="onClick($event)" value="Plataforma de Servicio" id="test" type="button" name="title" class="btn btn-danger btn-serv">Plataforma de Servicio</button>
-                         <button (click)="onClick($event)" value="Crédito" id="test" name="title" class="btn btn-success" type="button">Crédito</button>
+                         <button (click)="onClick($event)" value="Crédito" id="test" name="title" class="btn btn-success btn-serv" type="button">Crédito</button>
                          <button (click)="onClick($event)" value="Pago de Marchamo" id="test" name="title" class="btn btn-info btn-serv" type="button">Pago de Marchamo</button>
                          <button (click)="onClick($event)" value="Personas con Discapacidad" id="test" name="title" class="btn btn-warning btn-serv" type="button">Personas con Discapacidad</button>
                      </div>
@@ -103,12 +103,6 @@
     <!-- VISTA DISCAPACIDAD -->
     <div class="tab-pane" id="discapacidad"></div>
 </div>
-
-<input type="button" value="Iniciar" id="start" class="btn btn-success"/>
-<strong>Fecha:</strong> <span id="startTime"></span>
-<br>
-<input type="checkbox" [checked]="task.isDone" (click)="updateStatus(task)" id="stop">
-<strong>Duracion:<strong> <span id="relative"></span>
 
 
 
