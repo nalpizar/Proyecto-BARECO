@@ -104,6 +104,12 @@
     <div class="tab-pane" id="discapacidad"></div>
 </div>
 
+<input type="button" value="Iniciar" id="start" class="btn btn-success"/>
+<strong>Fecha:</strong> <span id="startTime"></span>
+<br>
+<input type="checkbox" [checked]="task.isDone" (click)="updateStatus(task)" id="stop">
+<strong>Duracion:<strong> <span id="relative"></span>
+
 
 
 
