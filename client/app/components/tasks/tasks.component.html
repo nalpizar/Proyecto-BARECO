@@ -57,15 +57,18 @@
           <table class="table">
             <tr>
               <th>Ficha</th>
-              <th>Iniciado</th>
-              <th>Hora de Inicio</th>
+              <th>Tiempo Transcurrido</th>
+              <th>Acciones</th>
             </tr>
             <tr *ngFor="let task of tasks" class="text-center">
               <!-- <div *ngIf="task.isDone === true"> -->
                   <td>{{task.title}}</td> 
-                  <td><input type="button" value="Iniciar" class="btn btn-success" id="start"></td>
-                  <td><span id="startTime"></span></td>
-                  <!-- <input type="button" (click)="deleteTask(task._id)" value="Borrar" class="btn btn-danger">     -->
+                  <td id="current">00:00:00</td>
+                  <td>
+                    <button id="start" onclick="javascript:start();" class="btn btn-success">COMENZAR</button>
+                    <button id="stop" onclick="javascript:stoptime();" class="btn btn-danger">DETENER</button>
+                  </td>
+              <!-- <input type="button" (click)="deleteTask(task._id)" value="Borrar" class="btn btn-danger">     -->
               <!-- </div> --> 
             </tr>
           </table>  
@@ -103,12 +106,6 @@
     <!-- VISTA DISCAPACIDAD -->
     <div class="tab-pane" id="discapacidad"></div>
 </div>
-
-<input type="button" value="Iniciar" class="btn btn-success" id="start">
-<p>Inicio: <span id="startTime"></span></p>
-<br>
-<input type="checkbox" value="Detener" class="btn btn-success" id="stop">
-<p>Tiempo Total:<span id="relative"></span></p>
 
 
 
