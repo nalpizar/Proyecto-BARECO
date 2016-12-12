@@ -6,8 +6,8 @@
             <h3 class="text-center">Seleccione un tipo de Ficha</h3>
             <form class="well">
               <div class="form-group">
-                <div class="item" *ngFor="let item of obj">
-                  <button (click)="increment(item)" (click)="onClick($event)" value="{{'C'}} {{ item['count'] ? item['count'] : item['count'] = 0}}" id="cajas" type="button" name="title" class="btn btn-primary btn-serv " data-toggle="modal" data-target="#cajasModal" >Cajas</button>
+                <div class="item" *ngFor="let caja of obj">
+                  <button (click)="increment(caja)" (click)="onClick($event)" value="{{'C'}} {{ caja['count'] ? caja['count'] : caja['count'] = 0}}" id="cajas" type="button" name="title" class="btn btn-primary btn-serv " data-toggle="modal" data-target="#cajasModal" >Cajas</button>
                     <!-- Modal -->
                   <div class="modal fade" id="cajasModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
@@ -21,7 +21,7 @@
                         <div class="modal-body" >
                           <div class="modal-body" >
                               <span>Su ficha es:</span>      
-                              <span>C {{item.count - 1}}</span>
+                              <span>C {{caja.count - 1}}</span>
                           </div>
                         </div>
                         <div class="modal-footer">
@@ -30,8 +30,10 @@
                       </div>
                     </div>
                   </div>
-                  
-                  <button (click)="increment(item)" (click)="onClick($event)" value="{{'P'}} {{ item['count'] ? item['count'] : item['count'] = 0}}" id="plataforma" class="btn btn-danger btn-serv" data-toggle="modal" data-target="#plataformaModal">Plataforma de Servicio</button>
+                </div>
+
+                <div class="item" *ngFor="let plataforma of obj">  
+                  <button (click)="increment(plataforma)" (click)="onClick($event)" value="{{'P'}} {{ plataforma['count'] ? plataforma['count'] : plataforma['count'] = 0}}" id="plataforma" class="btn btn-danger btn-serv" data-toggle="modal" data-target="#plataformaModal">Plataforma de Servicio</button>
                   <!-- Modal -->
                   <div class="modal fade" id="plataformaModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
@@ -45,7 +47,7 @@
                         <div class="modal-body" >
                           <div class="modal-body" >
                               <span>Su ficha es:</span>      
-                              <span>P {{item.count - 1}}</span>
+                              <span>P {{plataforma.count - 1}}</span>
                           </div>
                         </div>
                         <div class="modal-footer">
@@ -54,8 +56,10 @@
                       </div>
                     </div>
                   </div>
+                </div>  
                 
-                  <button (click)="increment(item)" (click)="onClick($event)" value="{{'R'}} {{ item['count'] ? item['count'] : item['count'] = 0}}" id="credito" class="btn btn-success btn-serv" data-toggle="modal" data-target="#creditoModal">Crédito</button>
+                <div class="item" *ngFor="let credito of obj">
+                  <button (click)="increment(credito)" (click)="onClick($event)" value="{{'R'}} {{ credito['count'] ? credito['count'] : credito['count'] = 0}}" id="credito" class="btn btn-success btn-serv" data-toggle="modal" data-target="#creditoModal">Crédito</button>
                   <!-- Modal -->
                   <div class="modal fade" id="creditoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
@@ -69,7 +73,7 @@
                         <div class="modal-body" >
                           <div class="modal-body" >
                               <span>Su ficha es:</span>      
-                              <span>R {{item.count - 1}}</span>
+                              <span>R {{credito.count - 1}}</span>
                           </div>
                         </div>
                         <div class="modal-footer">
@@ -78,8 +82,10 @@
                       </div>
                     </div>
                   </div>
-
-                  <button (click)="increment(item)" (click)="onClick($event)" value="{{'M'}} {{ item['count'] ? item['count'] : item['count'] = 0}}" id="marchamo" class="btn btn-info btn-serv" data-toggle="modal" data-target="#marchamoModal">Pago de Marchamo</button>
+                </div>
+                
+                <div class="item" *ngFor="let marchamo of obj">  
+                  <button (click)="increment(marchamo)" (click)="onClick($event)" value="{{'M'}} {{ marchamo['count'] ? marchamo['count'] : marchamo['count'] = 0}}" id="marchamo" class="btn btn-info btn-serv" data-toggle="modal" data-target="#marchamoModal">Pago de Marchamo</button>
                   <!-- Modal -->
                   <div class="modal fade" id="marchamoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
@@ -93,7 +99,7 @@
                         <div class="modal-body" >
                           <div class="modal-body" >
                               <span>Su ficha es:</span>      
-                              <span>M {{item.count - 1}}</span>
+                              <span>M {{marchamo.count - 1}}</span>
                           </div>
                         </div>
                         <div class="modal-footer">
@@ -102,8 +108,10 @@
                       </div>
                     </div>
                   </div>
-
-                  <button (click)="increment(item)" (click)="onClick($event)" value="{{'D'}} {{ item['count'] ? item['count'] : item['count'] = 0}}" id="discapacidad" class="btn btn-warning btn-serv" data-toggle="modal" data-target="#discapacidadModal">Personas con Discapacidad</button>
+                </div>
+                
+                <div class="item" *ngFor="let discapacidad of obj"> 
+                  <button (click)="increment(discapacidad)" (click)="onClick($event)" value="{{'D'}} {{ discapacidad['count'] ? discapacidad['count'] : discapacidad['count'] = 0}}" id="discapacidad" class="btn btn-warning btn-serv" data-toggle="modal" data-target="#discapacidadModal">Personas con Discapacidad</button>
                   <!-- Modal -->
                   <div class="modal fade" id="discapacidadModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
@@ -117,7 +125,7 @@
                         <div class="modal-body" >
                           <div class="modal-body" >
                               <span>Su ficha es:</span>      
-                              <span>D {{item.count - 1}}</span>
+                              <span>D {{discapacidad.count - 1}}</span>
                           </div>
                         </div>
                         <div class="modal-footer">
@@ -126,7 +134,7 @@
                       </div>
                     </div>
                   </div>
-                </div> 
+                </div>   
               </div>
             </form>
         </div>
