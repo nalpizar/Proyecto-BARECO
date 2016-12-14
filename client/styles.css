@@ -97,6 +97,7 @@ th {
 }
 
 .left {
+    padding-right: 60px;
     border-right: 1px solid #2c3e50; 
 }
 

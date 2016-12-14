@@ -152,59 +152,55 @@
     <!-- VISTA CAJAS -->
     <div class="tab-pane" id="cajasTab">
       <div class="row">
-        <div class="col-md-6 left">
+        <div class="col-md-8 left">
           <h3 class="text-center">Fichas en Proceso</h3>
             <table class="table">
               <tr>
                 <th>Ficha</th>
                 <th>Iniciado</th>
                 <th>Hora de Inicio</th>
+                <th>Detener</th>
+                <th>Duración</th>
+                <th>Finalizado</th>
               </tr>
                 <tr *ngFor="let task of tasks" class="text-center">
-                 <template [ngIf]="task.type == 'caja'">
-                <!-- <div *ngIf="task.isDone === true"> -->
+                 <template [ngIf]="task.type == 'caja' && !task.isDone">
                     <td>{{task.title}}</td> 
-                    <td><input type="button" value="Iniciar" class="btn btn-success" id="start"></td>
+                    <td><button id="start" onclick="javascript:start();" class="btn btn-success">COMENZAR</button></td>
                     <td><span id="startTime"></span></td>
-                    <!-- <input type="button" (click)="deleteTask(task._id)" value="Borrar" class="btn btn-danger">     -->
-                <!-- </div> -->
+                    <td><button id="stop" onclick="javascript:stoptime();" class="btn btn-danger">DETENER</button></td>
+                    <td id="current">00:00:00</td>
+                    <td><input type="checkbox" [checked]="task.isDone" (click)="updateStatus(task)"></td>
                   </template> 
                 </tr> 
             </table>
-          <table class="table">
+          <!--<table class="table">
             <tr>
               <th>Ficha</th>
               <th>Tiempo Transcurrido</th>
               <th>Acciones</th>
             </tr>
             <tr *ngFor="let task of tasks" class="text-center">
-              <!-- <div *ngIf="task.isDone === true"> -->
+              div *ngIf="task.isDone === true">
                   <td>{{task.title}}</td> 
                   <td id="current">00:00:00</td>
                   <td>
                     <button id="start" onclick="javascript:start();" class="btn btn-success">COMENZAR</button>
                     <button id="stop" onclick="javascript:stoptime();" class="btn btn-danger">DETENER</button>
                   </td>
-              <!-- <input type="button" (click)="deleteTask(task._id)" value="Borrar" class="btn btn-danger">     -->
-              <!-- </div> --> 
+              <input type="button" (click)="deleteTask(task._id)" value="Borrar" class="btn btn-danger"> 
+              </div>
             </tr>
-          </table>  
+          </table>-->  
         </div>
-        <div class="col-xs-6">
-          <h3 class="text-center">Fichas Terminadas</h3>
+        <div class="col-md-4">
+          <h3 class="text-center">Fichas Finalizadas</h3>
           <table class="table">
-            <tr>
-              <th>Ficha</th>
-              <th>Finalizado</th>
-              <th>Duración</th>
-            </tr>
             <tr *ngFor="let task of tasks" class="text-center">
-              <!-- <div *ngIf="task.isDone === false"> -->
-                  <td>{{task.title}}</td>
-                  <td><input type="button" value="Detener" class="btn btn-success" id="stop"><input type="checkbox" [checked]="task.isDone" (click)="updateStatus(task)"></td>
-                  <td><span id="relative"></span></td>
-                  <!-- <input type="button" (click)="deleteTask(task._id)" value="Borrar" class="btn btn-danger">     -->
-              <!-- </div> -->
+             <template [ngIf]="task.type == 'caja' && task.isDone">
+                <td>{{task.title}}</td> 
+                <!-- <input type="button" (click)="deleteTask(task._id)" value="Borrar" class="btn btn-danger">     -->
+              </template> 
             </tr> 
           </table>
         </div>
