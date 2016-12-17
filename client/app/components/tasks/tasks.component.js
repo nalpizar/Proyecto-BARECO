@@ -29,6 +29,8 @@ var TasksComponent = (function () {
         var newTask = {
             title: this.title,
             type: this.type,
+            date: this.date,
+            timer: this.timer,
             isDone: false
         };
         this.taskService.addTask(newTask)
@@ -36,6 +38,8 @@ var TasksComponent = (function () {
             _this.tasks.push(task);
             _this.title = '';
             _this.type = '';
+            _this.date = '';
+            _this.timer = '';
         });
     };
     TasksComponent.prototype.onClick = function (event) {
@@ -50,6 +54,8 @@ var TasksComponent = (function () {
         var newTask = {
             title: value,
             type: name,
+            date: '',
+            timer: '',
             isDone: false
         };
         this.taskService.addTask(newTask)
@@ -57,6 +63,8 @@ var TasksComponent = (function () {
             _this.tasks.push(task);
             _this.title = '';
             _this.type = '';
+            _this.date = '';
+            _this.timer = '';
         });
     };
     TasksComponent.prototype.deleteTask = function (id) {
@@ -72,10 +80,14 @@ var TasksComponent = (function () {
         });
     };
     TasksComponent.prototype.updateStatus = function (task) {
+        var _this = this;
+         
         var _task = {
             _id: task._id,
             title: task.title,
-            name: task.name,
+            type: task.type,
+            date: task.date,
+            timer: task.timer,
             isDone: !task.isDone
         };
         this.taskService.updateStatus(_task).subscribe(function (data) {

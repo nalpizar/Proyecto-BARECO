@@ -6,8 +6,8 @@
             <h3 class="text-center">Seleccione un tipo de Ficha</h3>
             <form class="well">
               <div class="form-group">
-                <div class="item" *ngFor="let caja of obj">
-                  <button (click)="increment(caja)" (click)="onClick($event)" value="{{'C'}} {{ caja['count'] ? caja['count'] : caja['count'] = 0}}" id="cajas" name="caja" class="btn btn-primary btn-serv " data-toggle="modal" data-target="#cajasModal" >Cajas</button>
+                <div class="item" *ngFor="let C of obj">
+                  <button (click)="increment(C)" (click)="onClick($event)" value="{{'C'}} {{ C['count'] ? C['count'] : C['count'] = 0}}" id="cajas" name="caja" class="btn btn-primary btn-serv " data-toggle="modal" data-target="#cajasModal" >Cajas</button>
                     <!-- Modal -->
                   <div class="modal fade" id="cajasModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
@@ -21,7 +21,7 @@
                         <div class="modal-body" >
                           <div class="modal-body" >
                               <span>Su ficha es:</span>      
-                              <span>C {{caja.count - 1}}</span>
+                              <span>C {{C.count - 1}}</span>
                           </div>
                         </div>
                         <div class="modal-footer">
@@ -32,8 +32,8 @@
                   </div>
                 </div>
 
-                <div class="item" *ngFor="let plataforma of obj">  
-                  <button (click)="increment(plataforma)" (click)="onClick($event)" value="{{'P'}} {{ plataforma['count'] ? plataforma['count'] : plataforma['count'] = 0}}" id="plataforma" name="plataforma" class="btn btn-danger btn-serv" data-toggle="modal" data-target="#plataformaModal">Plataforma de Servicio</button>
+                <div class="item" *ngFor="let P of obj">  
+                  <button (click)="increment(P)" (click)="onClick($event)" value="{{'P'}} {{ P['count'] ? P['count'] : P['count'] = 0}}" id="plataforma" name="plataforma" class="btn btn-danger btn-serv" data-toggle="modal" data-target="#plataformaModal">Plataforma de Servicio</button>
                   <!-- Modal -->
                   <div class="modal fade" id="plataformaModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
@@ -47,7 +47,7 @@
                         <div class="modal-body" >
                           <div class="modal-body" >
                               <span>Su ficha es:</span>      
-                              <span>P {{plataforma.count - 1}}</span>
+                              <span>P {{P.count - 1}}</span>
                           </div>
                         </div>
                         <div class="modal-footer">
@@ -58,8 +58,8 @@
                   </div>
                 </div>  
                 
-                <div class="item" *ngFor="let credito of obj">
-                  <button (click)="increment(credito)" (click)="onClick($event)" value="{{'R'}} {{ credito['count'] ? credito['count'] : credito['count'] = 0}}" id="credito" name="credito" class="btn btn-success btn-serv" data-toggle="modal" data-target="#creditoModal">Crédito</button>
+                <div class="item" *ngFor="let C of obj">
+                  <button (click)="increment(C)" (click)="onClick($event)" value="{{'R'}} {{ C['count'] ? C['count'] : C['count'] = 0}}" id="credito" name="credito" class="btn btn-success btn-serv" data-toggle="modal" data-target="#creditoModal">Crédito</button>
                   <!-- Modal -->
                   <div class="modal fade" id="creditoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
@@ -73,7 +73,7 @@
                         <div class="modal-body" >
                           <div class="modal-body" >
                               <span>Su ficha es:</span>      
-                              <span>R {{credito.count - 1}}</span>
+                              <span>R {{C.count - 1}}</span>
                           </div>
                         </div>
                         <div class="modal-footer">
@@ -84,8 +84,8 @@
                   </div>
                 </div>
                 
-                <div class="item" *ngFor="let marchamo of obj">  
-                  <button (click)="increment(marchamo)" (click)="onClick($event)" value="{{'M'}} {{ marchamo['count'] ? marchamo['count'] : marchamo['count'] = 0}}" id="marchamo" name="marchamo" class="btn btn-info btn-serv" data-toggle="modal" data-target="#marchamoModal">Pago de Marchamo</button>
+                <div class="item" *ngFor="let M of obj">  
+                  <button (click)="increment(M)" (click)="onClick($event)" value="{{'M'}} {{ M['count'] ? M['count'] : M['count'] = 0}}" id="marchamo" name="marchamo" class="btn btn-info btn-serv" data-toggle="modal" data-target="#marchamoModal">Pago de Marchamo</button>
                   <!-- Modal -->
                   <div class="modal fade" id="marchamoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
@@ -99,7 +99,7 @@
                         <div class="modal-body" >
                           <div class="modal-body" >
                               <span>Su ficha es:</span>      
-                              <span>M {{marchamo.count - 1}}</span>
+                              <span>M {{M.count - 1}}</span>
                           </div>
                         </div>
                         <div class="modal-footer">
@@ -110,8 +110,8 @@
                   </div>
                 </div>
                 
-                <div class="item" *ngFor="let discapacidad of obj"> 
-                  <button (click)="increment(discapacidad)" (click)="onClick($event)" value="{{'D'}} {{ discapacidad['count'] ? discapacidad['count'] : discapacidad['count'] = 0}}" name="discapacidad" id="discapacidad" class="btn btn-warning btn-serv" data-toggle="modal" data-target="#discapacidadModal">Personas con Discapacidad</button>
+                <div class="item" *ngFor="let D of obj"> 
+                  <button (click)="increment(D)" (click)="onClick($event)" value="{{'D'}} {{ D['count'] ? D['count'] : D['count'] = 0}}" name="discapacidad" id="discapacidad" class="btn btn-warning btn-serv" data-toggle="modal" data-target="#discapacidadModal">Personas con Discapacidad</button>
                   <!-- Modal -->
                   <div class="modal fade" id="discapacidadModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
@@ -125,7 +125,7 @@
                         <div class="modal-body" >
                           <div class="modal-body" >
                               <span>Su ficha es:</span>      
-                              <span>D {{discapacidad.count - 1}}</span>
+                              <span>D {{D.count - 1}}</span>
                           </div>
                         </div>
                         <div class="modal-footer">
@@ -142,7 +142,9 @@
             <div class="task-list text-center">
                 <h3>Fichas en Espera</h3>
                 <div *ngFor="let task of tasks">
-                    <h4>{{task.title}}</h4>    
+                  <template [ngIf]="!task.isDone">
+                    <h4>{{task.title}}</h4> 
+                  </template>   
                 </div>
             </div>
           </div>
@@ -163,41 +165,38 @@
                 <th>Duración</th>
                 <th>Finalizado</th>
               </tr>
-                <tr *ngFor="let task of tasks" class="text-center">
-                 <template [ngIf]="task.type == 'caja' && !task.isDone">
-                    <td>{{task.title}}</td> 
-                    <td><button id="start" onclick="javascript:start();" class="btn btn-success">COMENZAR</button></td>
-                    <td><span id="startTime"></span></td>
-                    <td><button id="stop" onclick="javascript:stoptime();" class="btn btn-danger">DETENER</button></td>
-                    <td id="current">00:00:00</td>
-                    <td><input type="checkbox" [checked]="task.isDone" (click)="updateStatus(task)"></td>
-                  </template> 
-                </tr> 
+              <tr *ngFor="let task of tasks" class="text-center">
+               <template [ngIf]="task.type == 'caja' && !task.isDone">
+                  <td>{{task.title}}</td> 
+                  <td><button id="start" onclick="javascript:start(); javascript:showMoment()" class="btn btn-success">COMENZAR</button></td>
+                  <td><span id="displayDate"></span></td>
+                  <td><button id="stop" onclick="javascript:stoptime();" class="btn btn-danger">DETENER</button></td>
+                  <td id="current">00:00:00</td>
+                  <td><input type="checkbox" [checked]="task.isDone" (click)="updateStatus(task)"></td>
+                </template> 
+              </tr> 
             </table>
-          <!--<table class="table">
+          <!-- <table class="table">
             <tr>
               <th>Ficha</th>
               <th>Tiempo Transcurrido</th>
               <th>Acciones</th>
             </tr>
             <tr *ngFor="let task of tasks" class="text-center">
-              div *ngIf="task.isDone === true">
                   <td>{{task.title}}</td> 
                   <td id="current">00:00:00</td>
                   <td>
                     <button id="start" onclick="javascript:start();" class="btn btn-success">COMENZAR</button>
                     <button id="stop" onclick="javascript:stoptime();" class="btn btn-danger">DETENER</button>
                   </td>
-              <input type="button" (click)="deleteTask(task._id)" value="Borrar" class="btn btn-danger"> 
-              </div>
             </tr>
-          </table>-->  
+          </table> -->
         </div>
         <div class="col-md-4">
           <h3 class="text-center">Fichas Finalizadas</h3>
           <table class="table">
             <tr *ngFor="let task of tasks" class="text-center">
-             <template [ngIf]="task.type == 'caja' && task.isDone">
+             <template [ngIf]="task.type == 'caja' && task.isDone == true">
                 <td>{{task.title}}</td> 
                 <!-- <input type="button" (click)="deleteTask(task._id)" value="Borrar" class="btn btn-danger">     -->
               </template> 
@@ -208,16 +207,224 @@
     </div>
 
     <!-- VISTA PLATAFORMA SERVICIOS -->
-    <div class="tab-pane" id="serviciosTab"></div>
+    <div class="tab-pane" id="serviciosTab">
+      <div class="row">
+        <div class="col-md-8 left">
+          <h3 class="text-center">Fichas en Proceso</h3>
+            <table class="table">
+              <tr>
+                <th>Ficha</th>
+                <th>Iniciado</th>
+                <th>Hora de Inicio</th>
+                <th>Detener</th>
+                <th>Duración</th>
+                <th>Finalizado</th>
+              </tr>
+              <tr *ngFor="let task of tasks" class="text-center">
+               <template [ngIf]="task.type == 'plataforma' && !task.isDone">
+                  <td>{{task.title}}</td> 
+                  <td><button id="start" onclick="javascript:start(); javascript:showMoment()" class="btn btn-success">COMENZAR</button></td>
+                  <td><span id="displayDate"></span></td>
+                  <td><button id="stop" onclick="javascript:stoptime();" class="btn btn-danger">DETENER</button></td>
+                  <td id="current">00:00:00</td>
+                  <td><input type="checkbox" [checked]="task.isDone" (click)="updateStatus(task)"></td>
+                </template> 
+              </tr> 
+            </table>
+          <!-- <table class="table">
+            <tr>
+              <th>Ficha</th>
+              <th>Tiempo Transcurrido</th>
+              <th>Acciones</th>
+            </tr>
+            <tr *ngFor="let task of tasks" class="text-center">
+                  <td>{{task.title}}</td> 
+                  <td id="current">00:00:00</td>
+                  <td>
+                    <button id="start" onclick="javascript:start();" class="btn btn-success">COMENZAR</button>
+                    <button id="stop" onclick="javascript:stoptime();" class="btn btn-danger">DETENER</button>
+                  </td>
+            </tr>
+          </table> -->
+        </div>
+        <div class="col-md-4">
+          <h3 class="text-center">Fichas Finalizadas</h3>
+          <table class="table">
+            <tr *ngFor="let task of tasks" class="text-center">
+             <template [ngIf]="task.type == 'plataforma' && task.isDone == true">
+                <td>{{task.title}}</td> 
+                <!-- <input type="button" (click)="deleteTask(task._id)" value="Borrar" class="btn btn-danger">     -->
+              </template> 
+            </tr> 
+          </table>
+        </div>
+      </div>
+    </div>
 
     <!-- VISTA CREDITO -->
-    <div class="tab-pane" id="creditosTab"></div>
+    <div class="tab-pane" id="creditosTab">
+      <div class="row">
+        <div class="col-md-8 left">
+          <h3 class="text-center">Fichas en Proceso</h3>
+            <table class="table">
+              <tr>
+                <th>Ficha</th>
+                <th>Iniciado</th>
+                <th>Hora de Inicio</th>
+                <th>Detener</th>
+                <th>Duración</th>
+                <th>Finalizado</th>
+              </tr>
+              <tr *ngFor="let task of tasks" class="text-center">
+               <template [ngIf]="task.type == 'credito' && !task.isDone">
+                  <td>{{task.title}}</td> 
+                  <td><button id="start" onclick="javascript:start(); javascript:showMoment()" class="btn btn-success">COMENZAR</button></td>
+                  <td><span id="displayDate"></span></td>
+                  <td><button id="stop" onclick="javascript:stoptime();" class="btn btn-danger">DETENER</button></td>
+                  <td id="current">00:00:00</td>
+                  <td><input type="checkbox" [checked]="task.isDone" (click)="updateStatus(task)"></td>
+                </template> 
+              </tr> 
+            </table>
+          <!-- <table class="table">
+            <tr>
+              <th>Ficha</th>
+              <th>Tiempo Transcurrido</th>
+              <th>Acciones</th>
+            </tr>
+            <tr *ngFor="let task of tasks" class="text-center">
+                  <td>{{task.title}}</td> 
+                  <td id="current">00:00:00</td>
+                  <td>
+                    <button id="start" onclick="javascript:start();" class="btn btn-success">COMENZAR</button>
+                    <button id="stop" onclick="javascript:stoptime();" class="btn btn-danger">DETENER</button>
+                  </td>
+            </tr>
+          </table> -->
+        </div>
+        <div class="col-md-4">
+          <h3 class="text-center">Fichas Finalizadas</h3>
+          <table class="table">
+            <tr *ngFor="let task of tasks" class="text-center">
+             <template [ngIf]="task.type == 'credito' && task.isDone == true">
+                <td>{{task.title}}</td> 
+                <!-- <input type="button" (click)="deleteTask(task._id)" value="Borrar" class="btn btn-danger">     -->
+              </template> 
+            </tr> 
+          </table>
+        </div>
+      </div>
+    </div>
 
     <!-- VISTA MARCHAMO -->
-    <div class="tab-pane" id="marchamoTab"></div>
+    <div class="tab-pane" id="marchamoTab">
+      <div class="row">
+        <div class="col-md-8 left">
+          <h3 class="text-center">Fichas en Proceso</h3>
+            <table class="table">
+              <tr>
+                <th>Ficha</th>
+                <th>Iniciado</th>
+                <th>Hora de Inicio</th>
+                <th>Detener</th>
+                <th>Duración</th>
+                <th>Finalizado</th>
+              </tr>
+              <tr *ngFor="let task of tasks" class="text-center">
+               <template [ngIf]="task.type == 'marchamo' && !task.isDone">
+                  <td>{{task.title}}</td> 
+                  <td><button id="start" onclick="javascript:start(); javascript:showMoment()" class="btn btn-success">COMENZAR</button></td>
+                  <td><span id="displayDate"></span></td>
+                  <td><button id="stop" onclick="javascript:stoptime();" class="btn btn-danger">DETENER</button></td>
+                  <td id="current">00:00:00</td>
+                  <td><input type="checkbox" [checked]="task.isDone" (click)="updateStatus(task)"></td>
+                </template> 
+              </tr> 
+            </table>
+          <!-- <table class="table">
+            <tr>
+              <th>Ficha</th>
+              <th>Tiempo Transcurrido</th>
+              <th>Acciones</th>
+            </tr>
+            <tr *ngFor="let task of tasks" class="text-center">
+                  <td>{{task.title}}</td> 
+                  <td id="current">00:00:00</td>
+                  <td>
+                    <button id="start" onclick="javascript:start();" class="btn btn-success">COMENZAR</button>
+                    <button id="stop" onclick="javascript:stoptime();" class="btn btn-danger">DETENER</button>
+                  </td>
+            </tr>
+          </table> -->
+        </div>
+        <div class="col-md-4">
+          <h3 class="text-center">Fichas Finalizadas</h3>
+          <table class="table">
+            <tr *ngFor="let task of tasks" class="text-center">
+             <template [ngIf]="task.type == 'marchamo' && task.isDone == true">
+                <td>{{task.title}}</td> 
+                <!-- <input type="button" (click)="deleteTask(task._id)" value="Borrar" class="btn btn-danger">     -->
+              </template> 
+            </tr> 
+          </table>
+        </div>
+      </div>
+    </div>
 
     <!-- VISTA DISCAPACIDAD -->
-    <div class="tab-pane" id="discapacidadTab"></div>
+    <div class="tab-pane" id="discapacidadTab">
+      <div class="row">
+        <div class="col-md-8 left">
+          <h3 class="text-center">Fichas en Proceso</h3>
+            <table class="table">
+              <tr>
+                <th>Ficha</th>
+                <th>Iniciado</th>
+                <th>Hora de Inicio</th>
+                <th>Detener</th>
+                <th>Duración</th>
+                <th>Finalizado</th>
+              </tr>
+              <tr *ngFor="let task of tasks" class="text-center">
+               <template [ngIf]="task.type == 'discapacidad' && !task.isDone">
+                  <td>{{task.title}}</td> 
+                  <td><button id="start" onclick="javascript:start(); javascript:showMoment()" class="btn btn-success">COMENZAR</button></td>
+                  <td><span id="displayDate"></span></td>
+                  <td><button id="stop" onclick="javascript:stoptime();" class="btn btn-danger">DETENER</button></td>
+                  <td id="current">00:00:00</td>
+                  <td><input type="checkbox" [checked]="task.isDone" (click)="updateStatus(task)"></td>
+                </template> 
+              </tr> 
+            </table>
+          <!-- <table class="table">
+            <tr>
+              <th>Ficha</th>
+              <th>Tiempo Transcurrido</th>
+              <th>Acciones</th>
+            </tr>
+            <tr *ngFor="let task of tasks" class="text-center">
+                  <td>{{task.title}}</td> 
+                  <td id="current">00:00:00</td>
+                  <td>
+                    <button id="start" onclick="javascript:start();" class="btn btn-success">COMENZAR</button>
+                    <button id="stop" onclick="javascript:stoptime();" class="btn btn-danger">DETENER</button>
+                  </td>
+            </tr>
+          </table> -->
+        </div>
+        <div class="col-md-4">
+          <h3 class="text-center">Fichas Finalizadas</h3>
+          <table class="table">
+            <tr *ngFor="let task of tasks" class="text-center">
+             <template [ngIf]="task.type == 'discapacidad' && task.isDone == true">
+                <td>{{task.title}}</td> 
+                <!-- <input type="button" (click)="deleteTask(task._id)" value="Borrar" class="btn btn-danger">     -->
+              </template> 
+            </tr> 
+          </table>
+        </div>
+      </div>
+    </div>
 </div>
 
 

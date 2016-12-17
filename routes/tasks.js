@@ -63,6 +63,10 @@ router.put('/task/:id', function(req, res, next){
     if(task.title){
         updTask.title = task.title;
     }
+
+    if(task.type){
+        updTask.type = task.type;
+    }
     
     if(!updTask){
         res.status(400);

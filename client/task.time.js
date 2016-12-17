@@ -41,3 +41,10 @@ function showTime() {
 function stoptime() {
   stop = true;
 }
+
+function showMoment() {
+  var NowMoment = moment();
+  var eDisplayMoment = document.getElementById('displayDate');
+    
+  eDisplayMoment.innerHTML = NowMoment.format('YYYY-M-D');
+}
